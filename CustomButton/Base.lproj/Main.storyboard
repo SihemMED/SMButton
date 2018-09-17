@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sl4-lY-ftY" customClass="SMButton" customModule="CustomButton" customModuleProvider="target">
+                                <rect key="frame" x="94" y="313" width="187.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MVL-Nb-0Ua"/>
+                                </constraints>
+                                <state key="normal" title="Active Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActivate" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="activeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Mu-fb-YNX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNP-Am-hok" customClass="SMButton" customModule="CustomButton" customModuleProvider="target">
+                                <rect key="frame" x="94" y="373" width="187.5" height="40"/>
+                                <state key="normal" title="Deactivate Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isActivate" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deactivateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDD-bA-MdU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhs-Ep-6XZ" customClass="SMButton" customModule="CustomButton" customModuleProvider="target">
+                                <rect key="frame" x="137" y="443" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Vsi-pP-ymy"/>
+                                    <constraint firstAttribute="height" constant="100" id="Y6s-Jj-7wR"/>
+                                </constraints>
+                                <state key="normal" title="Round Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pNP-Am-hok" firstAttribute="height" secondItem="sl4-lY-ftY" secondAttribute="height" id="2fw-cs-yOa"/>
+                            <constraint firstItem="pNP-Am-hok" firstAttribute="width" secondItem="sl4-lY-ftY" secondAttribute="width" id="5TZ-Fr-0Lo"/>
+                            <constraint firstItem="sl4-lY-ftY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SCO-4y-tm4"/>
+                            <constraint firstItem="pNP-Am-hok" firstAttribute="top" secondItem="sl4-lY-ftY" secondAttribute="bottom" constant="20" id="U03-c8-Phd"/>
+                            <constraint firstItem="pNP-Am-hok" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGt-L9-5mY"/>
+                            <constraint firstItem="hhs-Ep-6XZ" firstAttribute="top" secondItem="pNP-Am-hok" secondAttribute="bottom" constant="30" id="bwx-oX-6Ut"/>
+                            <constraint firstItem="sl4-lY-ftY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="c60-13-mXn"/>
+                            <constraint firstItem="hhs-Ep-6XZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jpe-TY-cvk"/>
+                            <constraint firstItem="sl4-lY-ftY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xPx-jm-GcP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activeButton" destination="sl4-lY-ftY" id="C3P-ff-n4p"/>
+                        <outlet property="deactivateButton" destination="pNP-Am-hok" id="YWR-3L-NzB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
